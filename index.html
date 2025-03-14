@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Amor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="heart-container"></div>
+    <div class="container">
+        <h1>Feliz Aniversário de Namoro meu Amor! 💖</h1>
+        <p>Dois anos e dois meses de muito amor! Que venham muitos mais. 🥰</p>
+        <button onclick="mostrarVideo()">Clique para ver nosso vídeo 📽️</button>
+        
+        <div id="video" class="hidden">
+            <video controls>
+                <source src="WhatsApp Video 2025-03-14 at 20.32.49_d45e5a2f.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos.
+            </video>
+        </div>
+    </div>
+    
+    <script>
+        function mostrarVideo() {
+            document.getElementById('video').classList.toggle('hidden');
+        }
+
+        function criarCoracao() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.querySelector('.heart-container').appendChild(heart);
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(criarCoracao, 300);
+    </script>
+</body>
+</html>
